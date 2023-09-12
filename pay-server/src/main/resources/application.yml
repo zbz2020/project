@@ -1,0 +1,42 @@
+server:
+  port: 8081
+debug: true
+rocketmq:
+  name-server: 121.37.213.78:9876
+  producer:
+    group: jf2302-mq
+    send-message-timeout: 3000
+    compress-message-body-threshold: 4096
+    retry-times-when-send-failed: 3
+    retry-times-when-send-async-failed: 3
+    max-message-size: 4096
+spring:
+  redis:
+    host: 121.37.196.235
+    port: 6379
+    password: Meng55054201
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://121.37.196.235:3306/mydata4?useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 'Meng55054201'
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#image:
+#  basePath: /root/static/photo
+#  basePath: E:/picture
+
+
+
